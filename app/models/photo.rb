@@ -11,15 +11,6 @@
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #  owner_id       :integer
-#  user_id        :integer
-#
-# Indexes
-#
-#  index_photos_on_user_id  (user_id)
-#
-# Foreign Keys
-#
-#  user_id  (user_id => users.id)
 #
 class Photo < ApplicationRecord
   # Validations
