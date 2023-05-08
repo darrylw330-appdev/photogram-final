@@ -2,7 +2,8 @@
 #
 # Table name: likes
 #
-#  id :integer          not null, primary key
+#  id     :integer          not null, primary key
+#  fan_id :integer
 #
 class Like < ApplicationRecord
   # validations

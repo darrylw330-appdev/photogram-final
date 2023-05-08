@@ -2,7 +2,8 @@
 #
 # Table name: comments
 #
-#  id :integer          not null, primary key
+#  id        :integer          not null, primary key
+#  author_id :integer
 #
 class Comment < ApplicationRecord
   # Validations

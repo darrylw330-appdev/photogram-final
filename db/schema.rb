@@ -19,12 +19,15 @@ ActiveRecord::Schema.define(version: 2023_05_08_191344) do
   end
 
   create_table "comments", force: :cascade do |t|
+    t.integer "author_id"
   end
 
   create_table "follow_requests", force: :cascade do |t|
+    t.string "status"
   end
 
   create_table "likes", force: :cascade do |t|
+    t.integer "fan_id"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -36,6 +39,8 @@ ActiveRecord::Schema.define(version: 2023_05_08_191344) do
     t.integer "comments_count"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_photos_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -47,6 +52,8 @@ ActiveRecord::Schema.define(version: 2023_05_08_191344) do
     t.integer "own_photos_count"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "comments_count"
   end
 
+  add_foreign_key "photos", "users"
 end

@@ -1,5 +1,5 @@
-class RemoveUserIdFromPhotos < ActiveRecord::Migration[6.0]
+class RemoveUserIdFromLikes < ActiveRecord::Migration[6.0]
   def change
-    remove_column :photos, :user_id
+    remove_column :likes, :user_id
   end
 end

@@ -2,7 +2,8 @@
 #
 # Table name: follow_requests
 #
-#  id :integer          not null, primary key
+#  id     :integer          not null, primary key
+#  status :string
 #
 class FollowRequest < ApplicationRecord
   # Validations

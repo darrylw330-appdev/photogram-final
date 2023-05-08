@@ -3,6 +3,7 @@
 # Table name: users
 #
 #  id                             :integer          not null, primary key
+#  comments_count                 :integer
 #  email                          :string
 #  own_photos_count               :integer
 #  password_digest                :string
