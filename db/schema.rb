@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_08_203235) do
+ActiveRecord::Schema.define(version: 2023_05_08_205331) do
 
   create_table "add_likes_count_to_users", force: :cascade do |t|
   end
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2023_05_08_203235) do
 
   create_table "follow_requests", force: :cascade do |t|
     t.string "status"
+    t.integer "recipient_id"
+    t.integer "sender_id"
   end
 
   create_table "likes", force: :cascade do |t|
