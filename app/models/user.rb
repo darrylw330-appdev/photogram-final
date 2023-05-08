@@ -5,6 +5,7 @@
 #  id                             :integer          not null, primary key
 #  comments_count                 :integer
 #  email                          :string
+#  liked_photos                   :integer
 #  own_photos_count               :integer
 #  password_digest                :string
 #  private                        :boolean

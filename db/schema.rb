@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_08_212427) do
+ActiveRecord::Schema.define(version: 2023_05_08_212757) do
 
   create_table "add_likes_count_to_users", force: :cascade do |t|
   end
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2023_05_08_212427) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "comments_count"
     t.boolean "private"
+    t.integer "liked_photos"
   end
 
   add_foreign_key "likes", "photos"
