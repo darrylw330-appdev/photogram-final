@@ -38,3 +38,4 @@ class Photo < ApplicationRecord
   #   joins(:owner).where(users: { private: false })
   # end
 end
+

@@ -3,6 +3,7 @@
 # Table name: comments
 #
 #  id        :integer          not null, primary key
+#  body      :text
 #  author_id :integer
 #
 class Comment < ApplicationRecord
