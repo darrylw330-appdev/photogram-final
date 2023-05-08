@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_08_205331) do
+ActiveRecord::Schema.define(version: 2023_05_08_212427) do
 
   create_table "add_likes_count_to_users", force: :cascade do |t|
   end
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 2023_05_08_205331) do
 
   create_table "likes", force: :cascade do |t|
     t.integer "fan_id"
+    t.integer "photo_id"
+    t.index ["photo_id"], name: "index_likes_on_photo_id"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -56,4 +58,5 @@ ActiveRecord::Schema.define(version: 2023_05_08_205331) do
     t.boolean "private"
   end
 
+  add_foreign_key "likes", "photos"
 end

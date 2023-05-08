@@ -2,8 +2,17 @@
 #
 # Table name: likes
 #
-#  id     :integer          not null, primary key
-#  fan_id :integer
+#  id       :integer          not null, primary key
+#  fan_id   :integer
+#  photo_id :integer
+#
+# Indexes
+#
+#  index_likes_on_photo_id  (photo_id)
+#
+# Foreign Keys
+#
+#  photo_id  (photo_id => photos.id)
 #
 class Like < ApplicationRecord
   # validations
