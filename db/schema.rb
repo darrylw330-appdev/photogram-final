@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_08_201924) do
+ActiveRecord::Schema.define(version: 2023_05_08_203235) do
 
   create_table "add_likes_count_to_users", force: :cascade do |t|
   end
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2023_05_08_201924) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "comments_count"
+    t.boolean "private"
   end
 
 end
