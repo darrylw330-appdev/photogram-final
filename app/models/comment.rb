@@ -2,9 +2,19 @@
 #
 # Table name: comments
 #
-#  id        :integer          not null, primary key
-#  body      :text
-#  author_id :integer
+#  id         :integer          not null, primary key
+#  body       :text
+#  created_at :datetime
+#  author_id  :integer
+#  photo_id   :integer
+#
+# Indexes
+#
+#  index_comments_on_photo_id  (photo_id)
+#
+# Foreign Keys
+#
+#  photo_id  (photo_id => photos.id)
 #
 class Comment < ApplicationRecord
   # Validations

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_08_234900) do
+ActiveRecord::Schema.define(version: 2023_05_08_235811) do
 
   create_table "add_likes_count_to_users", force: :cascade do |t|
   end
@@ -21,6 +21,9 @@ ActiveRecord::Schema.define(version: 2023_05_08_234900) do
   create_table "comments", force: :cascade do |t|
     t.integer "author_id"
     t.text "body"
+    t.integer "photo_id"
+    t.datetime "created_at"
+    t.index ["photo_id"], name: "index_comments_on_photo_id"
   end
 
   create_table "follow_requests", force: :cascade do |t|
@@ -60,5 +63,6 @@ ActiveRecord::Schema.define(version: 2023_05_08_234900) do
     t.integer "liked_photos"
   end
 
+  add_foreign_key "comments", "photos"
   add_foreign_key "likes", "photos"
 end
