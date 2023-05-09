@@ -10,32 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_08_235948) do
-
-  create_table "add_likes_count_to_users", force: :cascade do |t|
-  end
-
-  create_table "add_private_to_users", force: :cascade do |t|
-  end
+ActiveRecord::Schema.define(version: 2023_05_08_212757) do
 
   create_table "comments", force: :cascade do |t|
-    t.integer "author_id"
     t.text "body"
     t.integer "photo_id"
-    t.datetime "created_at"
-    t.index ["photo_id"], name: "index_comments_on_photo_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "author_id"
   end
 
   create_table "follow_requests", force: :cascade do |t|
-    t.string "status"
-    t.integer "recipient_id"
     t.integer "sender_id"
+    t.integer "recipient_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "status"
   end
 
   create_table "likes", force: :cascade do |t|
-    t.integer "fan_id"
     t.integer "photo_id"
-    t.index ["photo_id"], name: "index_likes_on_photo_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "fan_id"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -58,11 +55,10 @@ ActiveRecord::Schema.define(version: 2023_05_08_235948) do
     t.integer "own_photos_count"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "likes_count", default: 0
     t.integer "comments_count"
     t.boolean "private"
     t.integer "liked_photos"
   end
 
-  add_foreign_key "comments", "photos"
-  add_foreign_key "likes", "photos"
 end

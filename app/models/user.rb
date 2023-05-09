@@ -6,6 +6,7 @@
 #  comments_count                 :integer
 #  email                          :string
 #  liked_photos                   :integer
+#  likes_count                    :integer          default(0)
 #  own_photos_count               :integer
 #  password_digest                :string
 #  private                        :boolean
@@ -46,10 +47,8 @@ class User < ApplicationRecord
   has_many(:feed, { :through => :following, :source => :own_photos })
 
   has_many(:activity, { :through => :following, :source => :liked_photos })
-end
-
-public
-
-def follow_request_for(other_user_id)
-  FollowRequest.where({ sender_id: self.id, recipient_id: other_user_id }).at(0)
+  
+  def follow_request_for(other_user_id)
+    FollowRequest.where({ sender_id: self.id, recipient_id: other_user_id }).at(0)
   end
+end
